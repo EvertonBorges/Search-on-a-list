@@ -1,0 +1,2 @@
+rootProject.name='Search on a list'
+include ':app'
