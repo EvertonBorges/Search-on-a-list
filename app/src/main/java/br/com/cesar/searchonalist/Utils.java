@@ -11,9 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-class Utils {
+public class Utils {
 
-    static List<String> getWordsInDocument(Context context, String file) {
+    public static List<String> getWordsInDocument(Context context, String file) {
         List<String> words = new ArrayList<>();
 
         AssetManager assetManager = context.getAssets();
@@ -31,7 +31,7 @@ class Utils {
         return words;
     }
 
-    static boolean isPartialPermutationXorTypo(String firstWord, String secondWord) {
+    public static boolean isPartialPermutationXorTypo(String firstWord, String secondWord) {
         final boolean isPartialPermutation = Utils.checkPartialPermutation(firstWord, secondWord);
         final boolean isTypo = Utils.checkTypo(firstWord, secondWord);
         return isPartialPermutation ^ isTypo;
@@ -52,7 +52,7 @@ class Utils {
 
     private static boolean checkByNumberPartialPermutation(String firstWord, String secondWord) {
         int countNumberOfPermutations = 0;
-        for(int i = 1; i < firstWord.length(); i++) {
+        for (int i = 1; i < firstWord.length(); i++) {
             if (firstWord.charAt(i) != secondWord.charAt(i)) {
                 countNumberOfPermutations++;
             }
@@ -62,7 +62,7 @@ class Utils {
     }
 
     private static boolean checkEachLetter(String firstWord, String secondWord) {
-        for(Character character: firstWord.toCharArray()) {
+        for (Character character : firstWord.toCharArray()) {
             int occurrencesInFirstWord = occurrencesIn(firstWord, character);
             int occurrencesInSecondWord = occurrencesIn(secondWord, character);
 
